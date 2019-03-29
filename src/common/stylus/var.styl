@@ -1,0 +1,15 @@
+$fontSize=16px
+$padding=16px
+$borderColor=#d9dde1
+$bgColor=#f3f5f7
+bgImg($url)
+  background-repeat:no-repeat
+  background-size:100% 100%
+  background-image:url($url+'@2x.png')
+  @media (min-device-pixel-ratio:2), (-webkit-min-device-pixel-ratio:3)
+    background-image:url($url+'@3x.png')
+ellipsis()
+  white-space:nowrap
+  overflow:hidden
+  text-overflow:ellipsis
+
