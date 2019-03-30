@@ -13,7 +13,7 @@
           {{seller.description}}/{{seller.deliveryTime}}分钟送达
         </div>
         <div v-if="seller.supports" class="support">
-          <!--<support-ico :size=1 :type="seller.supports[0].type"></support-ico>-->
+          <support-ico :size=1 :type="seller.supports[0].type"></support-ico>
           <span class="text">{{seller.supports[0].description}}</span>
         </div>
       </div>
@@ -33,8 +33,7 @@
 </template>
 
 <script type="text/ecmascript-6">
-  // import SupportIco from 'components/support-ico/support-ico'
-  // import HeaderDetail from './headerDetail'
+  import SupportIco from 'components/support-ico/support-ico'
 
   export default {
     name: 'VHeader',
@@ -49,16 +48,16 @@
     },
     methods: {
       showDetail() {
-        this.headDetail= this.headDetail || this.$createHeaderDetail({
+        this.headerDetailComp= this.headerDetailComp || this.$createHeaderDetail({
           $props: {
             seller: 'seller',
           },
         });
-        this.headDetail.show(); //调用组件内部定义的方法显示组件
+        this.headerDetailComp.show(); //调用组件内部定义的方法显示组件
       }
     },
     components: {
-      // SupportIco,
+      SupportIco
     }
   }
 </script>

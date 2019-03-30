@@ -1,14 +1,30 @@
 <template>
   <div id="app">
-    <v-header></v-header>
+    <v-header :seller="seller"></v-header>
   </div>
 </template>
 
 <script>
-import VHeader from './components/v-header/v-header'
-
+import VHeader from 'components/v-header/v-header'
+import { getSeller } from 'api'
 export default {
   name: 'app',
+  data() {
+    return {
+      seller: {}
+    }
+  },
+  created() {
+    //在created钩子函数请求服务器数据
+    this._getSeller()
+  },
+  methods: {
+    _getSeller() {
+      getSeller().then((seller) => {
+        this.seller = seller
+      })
+    }
+  },
   components: {
     VHeader
   }
