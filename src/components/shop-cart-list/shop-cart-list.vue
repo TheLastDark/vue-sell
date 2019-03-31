@@ -49,7 +49,7 @@
   const EVENT_LEAVE = 'leave'
 
   export default {
-    name: 'shop-cart-list',
+    name: 'shopCartList',
     mixins: [popupMixin],
     props: {
       selectFoods: {
