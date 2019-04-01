@@ -78,7 +78,7 @@
   import { getGoods } from 'api'
   import CartControl from 'components/cart-control/cart-control'
   import ShopCart from 'components/shop-cart/shop-cart'
-  // import Food from 'components/food/food'
+  import Food from 'components/food/food'
   import SupportIco from 'components/support-ico/support-ico'
   import Bubble from 'components/bubble/bubble'
 
@@ -145,11 +145,11 @@
           })
         }
       },
-      // selectFood(food) {
-      //   this.selectedFood = food
-      //   this._showFood()
-      //   this._showShopCartSticky()
-      // },
+      selectFood(food) {
+        this.selectedFood = food
+        this._showFood()
+        this._showShopCartSticky()
+      },
       onAdd(target) {
         this.$refs.shopCart.drop(target)
       },
