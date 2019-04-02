@@ -14,11 +14,14 @@ import { getSeller } from 'api'
 import Goods from './components/goods/goods'
 import Seller from "./components/seller/seller"
 import Ratings from './components/ratings/ratings'
+import qs from 'query-string'
 export default {
   name: 'app',
   data() {
     return {
-      seller: {}
+      seller: {
+        id: qs.parse(location.search).id
+      }
     }
   },
   computed: {
@@ -54,7 +57,9 @@ export default {
   },
   methods: {
     _getSeller() {
-      getSeller().then((seller) => {
+      getSeller({
+        id: this.seller.id
+      }).then((seller) => {
         this.seller = seller
       })
     }
