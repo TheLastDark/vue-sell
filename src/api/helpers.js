@@ -10,7 +10,7 @@ export function get(url) {
       const {
         errno,
         data
-      } = res.data;
+      } = res.data
       if (errno === ERR_OK) {
         return data
       }
